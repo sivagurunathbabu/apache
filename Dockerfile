@@ -7,3 +7,4 @@ ENV APACHE_RUN_DIR /var/www/html
 RUN echo 'Hello, docker' > /var/www/html/index.html
 ENTRYPOINT ["/usr/sbin/apache2"]
 CMD ["-D", "FOREGROUND"]
+
