@@ -21,8 +21,8 @@ pipeline {
 		stage('Print Docker Compose Version') {
             steps {
                 script {
-                    sh 'docker --version'
-                    sh 'docker-compose --version'
+                    sh 'sudo docker --version'
+                    sh 'sudo docker-compose --version'
                 }
             }
         }
