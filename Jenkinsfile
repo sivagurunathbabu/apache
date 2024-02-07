@@ -17,6 +17,7 @@ pipeline {
                 script {
                     def dockerComposeCmd = "docker-compose"
                     if (fileExists(DOCKER_COMPOSE_PATH)) {
+						echo 'docker compose exists'
                         dockerComposeCmd = DOCKER_COMPOSE_PATH
                     }
 
