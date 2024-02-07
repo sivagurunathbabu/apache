@@ -1,6 +1,12 @@
 pipeline {
-    agent any
+    #agent any 
+	agent {
+        docker {
+            image 'docker/compose:latest' // Use an image that includes Docker Compose
+        }
+    }
 
+	
 	
 	 environment {
         // Specify the path to the Docker binary
