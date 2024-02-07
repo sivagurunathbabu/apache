@@ -1,1 +1,1 @@
-This builds and deployes the apache server
+This builds and deployes the apache server.
