@@ -1,8 +1,10 @@
-version: '3.9'
+version: '3'
 services:
  apache-webserver:
   build:
     context: .
     dockerfile: Dockerfile
+   environment:
+      - HOSTNAME_FILE=/etc/apache2/apache2.conf
    ports:
 	- "8000:8000"
