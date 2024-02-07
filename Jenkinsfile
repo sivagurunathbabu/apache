@@ -1,8 +1,12 @@
 pipeline {
     agent any
 
-	environment {
-        DOCKER_COMPOSE_PATH = '/usr/local/bin/docker-compose'
+	
+	 environment {
+        // Specify the path to the Docker binary
+        DOCKER_PATH = '/usr/bin/docker' // Update with the correct path
+		DOCKER_COMPOSE_PATH = '/usr/local/bin/docker-compose'
+        PATH = "$DOCKER_PATH:$DOCKER_COMPOSE_PATH:${env.PATH}"
     }
 	
     stages {
