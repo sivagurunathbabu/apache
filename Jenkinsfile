@@ -6,6 +6,22 @@ pipeline {
     }
 	
     stages {
+	
+		stage('Print PATH') {
+            steps {
+                script {
+                    sh 'echo $PATH'
+                }
+            }
+        }
+		stage('Print Docker Compose Version') {
+            steps {
+                script {
+                    sh 'docker-compose --version'
+                }
+            }
+        }
+		
         stage('Checkout') {
             steps {
                 checkout scm
