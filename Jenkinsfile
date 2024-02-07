@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout https://github.com/sivagurunathbabu/apache.git
             }
         }
 
