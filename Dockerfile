@@ -1,11 +1,11 @@
-FROM ubuntu:latest
-RUN apt update && apt install -y apache2
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
-ENV APACHE_RUN_DIR /var/www/html
-RUN echo 'Hello, docker' > /var/www/html/index.html
-RUN echo 'ServerName \$HOSTNAME' > /etc/apache2/apache2.conf
-ENTRYPOINT ["/usr/sbin/apache2"]
-CMD ["-D", "FOREGROUND"]
+# Use the official Apache image from Docker Hub
+FROM httpd:latest
 
+# Copy the custom index.html file to the Apache document root
+COPY index.html /usr/local/apache2/htdocs/
+
+# Optionally, you can customize other Apache configurations if needed
+# COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+
+# Expose port 80 for incoming HTTP traffic
+EXPOSE 80
