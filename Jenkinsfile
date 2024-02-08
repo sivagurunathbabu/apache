@@ -1,12 +1,14 @@
 pipeline {
-   
-   agent any
+ 
+
+    agent any
    	
-		
+    stages {
+	
+			
         stage('Checkout') {
             steps {
                 checkout scm
-				echo 'Checkout sussessfull..'
             }
         }
 
@@ -17,9 +19,8 @@ pipeline {
 
                     // Run Docker Compose commands
                    // sh "docker-compose up -d"
-				   echo 'Build successful'
                 }
             }
         }
-    
+    }
 }
