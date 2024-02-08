@@ -8,12 +8,7 @@ pipeline {
 
 	
 	
-	 environment {
-        // Specify the path to the Docker binary
-        DOCKER_PATH = '/usr/bin/docker' // Update with the correct path
-		DOCKER_COMPOSE_PATH = '/usr/local/bin/docker-compose'
-        PATH = "$DOCKER_PATH:$DOCKER_COMPOSE_PATH:${env.PATH}"
-    }
+	
 	
     stages {
 	
@@ -42,14 +37,10 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    def dockerComposeCmd = "docker-compose"
-                    if (fileExists(DOCKER_COMPOSE_PATH)) {
-						echo 'docker compose exists'
-                        dockerComposeCmd = DOCKER_COMPOSE_PATH
                     }
 
                     // Run Docker Compose commands
-                    sh "${dockerComposeCmd} up -d"
+                    sh "docker-compose up -d"
                 }
             }
         }
