@@ -1,7 +1,12 @@
 pipeline {
    
-    agent any
+   agent any
    	
+	
+   environment {
+        PATH = "$PATH:/usr/local/bin"
+   }
+	
     stages {
 	
 		stage('Print PATH') {
