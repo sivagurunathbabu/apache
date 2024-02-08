@@ -2,15 +2,7 @@ pipeline {
    
     agent any
 
-    tools {
-        docker 'docker_24_05'
-        
-    }
-
-	
-	
-	
-	
+   	
     stages {
 	
 		stage('Print PATH') {
