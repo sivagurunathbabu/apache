@@ -1,10 +1,6 @@
 pipeline {
    
-   agent {
-        docker {
-            image 'docker/compose:latest' // Use an image that includes Docker Compose
-        }
-    }
+   agent any
 
 	
 	
